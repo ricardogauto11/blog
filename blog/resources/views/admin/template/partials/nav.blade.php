@@ -26,7 +26,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Opciones <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Salir</a></li>
+            <li><a href="{{ route('logout') }}">Cerrar sesión</a></li>
           </ul>
         </li>
       </ul>
