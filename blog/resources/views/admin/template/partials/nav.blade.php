@@ -13,6 +13,7 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    @if(Auth::user())
       <ul class="nav navbar-nav">
         <li><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
         <li><a href="{{ route('users.index') }}">Usuarios</a></li>
@@ -24,12 +25,13 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Página principal</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Opciones <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {{ Auth::user()->name }} <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="{{ route('logout') }}">Cerrar sesión</a></li>
+            <li><a href="{{ route('logout') }}">Salir</a></li>
           </ul>
         </li>
       </ul>
+      @endif
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
