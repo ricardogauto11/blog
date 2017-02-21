@@ -16,7 +16,12 @@ Route::get('/', function () {
 });
 
 // Grupo de rutas del panel de administración.
-Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
+
+    Route::get('/', [
+        'as' => 'admin.index', function () {
+        return view('welcome');
+    }]);
 
     Route::resource('users', 'UsersController');
     Route::get('users/{id}/destroy', [
@@ -28,6 +33,12 @@ Route::group(['prefix' => 'admin'], function(){
     Route::get('categories/{id}/destroy', [
         'uses' => 'CategoriesController@destroy',
         'as' => 'categories.destroy'
+    ]);
+
+    Route::resource('tags', 'TagsController');
+    Route::get('tags/{id}/destroy', [
+        'uses' => 'TagsController@destroy',
+        'as' => 'tags.destroy'
     ]);
 });
 
