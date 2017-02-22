@@ -18,9 +18,9 @@
         <li><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
         <li><a href="{{ route('users.index') }}">Usuarios</a></li>
         <li><a href="{{ route('categories.index') }}">Categorias</a></li>
-        <li><a href="#">Articulos</a></li>
-        <li><a href="#">Imágenes</a></li>
-        <li><a href="#">Tags</a></li>
+        <li><a href="#">Articulos</a></li> {{-- {{ route('articles.index') }} --}}
+        <li><a href="#">Imágenes</a></li> {{-- {{ route('images.index') }} --}}
+        <li><a href="{{ route('tags.index') }}">Tags</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Página principal</a></li>
